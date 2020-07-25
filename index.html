@@ -1,238 +1,234 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.0.1">
-    <title>Wherever the wind blows</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-    <!-- Bootstrap core CSS -->
-    <link href="../Team-Project/stylesheet.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="../Team-Project/stylesheet.css" rel="stylesheet">
-  </head>
-
-  <body>
-    <div class="bg-dark">
-      <h1 class="text-center mb-2 p-2 text-light">Title</h1>
-  </div>
-
-<div class="container-fluid">
-  <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar ">
-      <div class="sidebar-sticky pt-3">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link" id="temperature">
-              <span data-feather="home"></span>
-              Temperature: <span class="sr-only">(current)</span>
-            </a>
-
-            <div class="slidecontainer">
-              <input type="range" min="1" max="100" value="50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">      
+</head>
+<body id="home" class="scrollspy">
+    <!-- navbar -->
+    <div class="navbar-fixed">
+        <nav class="blue">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo">Website Name</a>
+                    <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#search">Search</a></li>
+                        <li><a href="#weather">Weather</a></li>
+                        <li><a href="#popular">Popular Cities</a></li>
+                    </ul>
+                </div>
             </div>
-          </li>
-        </ul>  
-
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-          <span>Type of Trip:</span>
-          <a class="d-flex align-items-center text-muted">
-            <span data-feather="plus-circle"></span>
-          </a>
-        </h6>
-
-        <ul class="nav flex-column mb-2">
-          <li class="nav-item">
-            <a class="nav-link" id="outdoors">
-              <input type="checkbox">Outdoors
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" id="indoors">
-              <input type="checkbox">Indoors
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" id="city">
-              <input type="checkbox">City
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" id="beach">
-              <input type="checkbox">Beach
-            </a>
-          </li>
-
+        </nav>
+    </div>
+    <ul id="mobile-nav" class="sidenav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#search">Search</a></li>
+        <li><a href="#weather">Weather</a></li>
+        <li><a href="#popular">Contact</a></li>
+    </ul>
+    
+    <!-- slider section -->
+    <section class="slider">
+        <ul class="slides">
+            <li>
+            <img src="assets/img1.jpg"> <!-- random image -->
+            <div class="caption center-align">
+                <h3>This is our big Tagline!</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+            </div>
+            </li>
+            <li>
+            <img src="assets/img2.jpg"> <!-- random image -->
+            <div class="caption left-align">
+                <h3>Left Aligned Caption</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+            </div>
+            </li>
+            <li>
+            <img src="https://lorempixel.com/580/250/nature/3"> <!-- random image -->
+            <div class="caption right-align">
+                <h3>Right Aligned Caption</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+            </div>
+            </li>
+            <li>
+            <img src="https://lorempixel.com/580/250/nature/4"> <!-- random image -->
+            <div class="caption center-align">
+                <h3>This is our big Tagline!</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+            </div>
+            </li>
         </ul>
+  </section> 
+    
+    <!-- search area -->
+    <section id="search" class="section section-search blue darken-1 white text center scrollspy">
+        <div class="container">
+=======
       </div>
     </nav>
 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
-      </div>
-
-        <section class=" text-center">
-          <div class="container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26371331.527698692!2d-113.71729875604574!3d36.21138648158707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2sus!4v1595462791965!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                     </div>
+      
         </section>
       
-        <div class="album py-5 bg-light">
-          <div class="container">
-            <h1>Explore Places and Activities</h1>
+       
             <div class="row">
-              <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                  <div class="card-body">
-                    <p class="activities">Activities</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      </div>
-                      <small class="text-muted">Location</small>
+                <div class="col s12">
+                    <h4>Search a City:</h4>
+                    <div class="input-field">
+                        <input type="text" class="white grey-text autocomplete" 
+                        id="autocomplete-input" placeholder="Detroit, Michigan, etc...">
+                        <a class="waves-effect waves-light btn">Search</a>
                     </div>
-                  </div>
                 </div>
-              </div>
+            </div>
+        </div>
+    </section>
 
-              <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                  <div class="card-body">
-                    <p class="activities">Activities</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
-                       <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      </div>
-                      <small class="text-muted">Location</small>
+    <!-- where weather will show up -->
+    <section id="weather" class="section section-weather scrollspy">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="card fiveDay">
+                        
                     </div>
-                  </div>
                 </div>
-              </div>
+            </div>
+        </div>
+    </section>
 
-              <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                  <div class="card-body">
-                    <p class="activities">Activities</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      </div>
-                      <small class="text-muted">Location</small>
+    <!-- where searched data will show up -->
+    <section class="section-icons grey lighten-4 center">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m4">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="assets/img2.jpg">
+                      <span class="card-title">Card Title</span>
+                    </div>
+                    <div class="card-content">
+                      <p>I am a very simple card. I am good at containing small bits of information.</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="#">This is a link</a>
                     </div>
                   </div>
                 </div>
-              </div>
-      
-              <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                  <div class="card-body">
-                    <p class="activities">Activities</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                <div class="col s12 m4">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="assets/img1.jpg">
+                        <span class="card-title">Card Title</span>
                       </div>
-                      <small class="text-muted">Location</small>
+                      <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.</p>
+                      </div>
+                      <div class="card-action">
+                        <a href="#">This is a link</a>
+                      </div>
                     </div>
-                  </div>
                 </div>
-              </div>
+                <div class="col s12 m4">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="assets/img3.jpg">
+                        <span class="card-title">Card Title</span>
+                      </div>
+                      <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.</p>
+                      </div>
+                      <div class="card-action">
+                        <a href="#">This is a link</a>
+                      </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="assets/img4.jpg">
+                        <span class="card-title">Card Title</span>
+                      </div>
+                      <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.</p>
+                      </div>
+                      <div class="card-action">
+                        <a href="#">This is a link</a>
+                      </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="assets/img6.jpg">
+                        <span class="card-title">Card Title</span>
+                      </div>
+                      <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.</p>
+                      </div>
+                      <div class="card-action">
+                        <a href="#">This is a link</a>
+                      </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="assets/img5.jpg">
+                        <span class="card-title">Card Title</span>
+                      </div>
+                      <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.</p>
+                      </div>
+                      <div class="card-action">
+                        <a href="#">This is a link</a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-              <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                  <div class="card-body">
-                    <p class="activities">Activities</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      </div>
-                      <small class="text-muted">Location</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                  <div class="card-body">
-                    <p class="activities">Activities</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      </div>
-                      <small class="text-muted">Location</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-      
-              <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                  <div class="card-body">
-                    <p class="activities">Activities</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      </div>
-                      <small class="text-muted">Location</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                  <div class="card-body">
-                    <p class="activities">Activities</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      </div>
-                      <small class="text-muted">Location</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                  <div class="card-body">
-                    <p class="activities">Activities</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      </div>
-                      <small class="text-muted">Location</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <!-- footer -->
+    <footer class="page-footer blue">
+        <div class="container">
+          <div class="row">
+            <div class="col l4 s12">
+              <h5 class="white-text">About</h5>
+              <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Links</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+              </ul>
             </div>
           </div>
         </div>
-    </main>
-  </div>
-</div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-        <script src="dashboard.js"></script></body>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2020 Copyright Website Name
+          </div>
+        </div>
+      </footer>
+    
+
+    <!-- Compiled and minified JavaScript -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
 </html>

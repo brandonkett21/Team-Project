@@ -1,3 +1,29 @@
+//links both API's and calls them simultaneously 
+links = ['https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=15&sort=relevance&offset=0&lang=en_US&currency=USD&units=km&query=','https://api.openweathermap.org/data/2.5/weather?q=']
+data = [];
+
+$('#get-data').click(function() {
+    async.each(links, function(link,callback){
+        $.getJSON(link, function(res){
+            data.push(res);
+            callback();
+        })
+    }, function(err){
+        if(!err){
+       
+// initialize sidenav using materialize js
+$(document).ready(function () {
+  $(".sidenav").sidenav();
+});
+
+// initialize slider using materialize js
+const slider = document.querySelector(".slider");
+M.Slider.init(slider, {
+  indicators: false,
+  height: 500,
+});
+
+//  VARIABLES:
 var APIKey = "166a433c57516f51dfab1f7edaed8413";
 var city = "";
 var currentDate = "";
@@ -18,6 +44,8 @@ var iconcode = "";
 var iconurl = "";
 var country = "";
 var listOfSearchedCities = [];
+
+// SET LOCAL STORAGE:
 var getSeachedCitiesFromLS = JSON.parse(
   localStorage.getItem("searched-cities")
 );
@@ -27,6 +55,7 @@ if (getSeachedCitiesFromLS !== null) {
   });
   listOfSearchedCities = getSeachedCitiesFromLS;
 }
+
 $(document).ready(function () {
   displayCities(listOfSearchedCities);
   if (getSeachedCitiesFromLS !== null) {
@@ -34,32 +63,41 @@ $(document).ready(function () {
     searchCity(lastCity);
   }
 });
+
+// SEARCH BUTTON FXN
 $("#search-btn").on("click", function () {
   event.preventDefault();
   clearDisplayedWeatherInfo();
   resetGlobalVariables();
+
   var cityName = $("input").val().toUpperCase().trim();
   $("#search-input").val("");
   searchCity(cityName);
+
   if (cityName !== "" && listOfSearchedCities[0] !== cityName) {
     listOfSearchedCities.unshift(cityName);
     localStorage.setItem(
       "searched-cities",
       JSON.stringify(listOfSearchedCities)
     );
+
     if (listOfSearchedCities.length === 1) {
       $("#searched-cities-card").removeClass("hide");
     }
+
     console.log($("ul#searched-cities-list a").length);
+
     if ($("ul#searched-cities-list a").length >= 5) {
       $("ul#searched-cities-list a:eq(4)").remove();
     }
+
     $("#searched-cities-list")
       .prepend(`<a href="#" class="list-group-item" style="text-decoration: none; color: black;">
     <li>${cityName}</li>
     </a>`);
   }
 });
+
 $(document).on("click", ".list-group-item", function () {
   var cityName = $(this).text();
   clearDisplayedWeatherInfo();
@@ -86,22 +124,28 @@ function displayCurrentWeather() {
   cardDiv.append(uvIndexEl);
   $("#current-weather-conditions").append(cardDiv);
 }
+
 function displayDayForeCast() {
   var imgEl = $("<img>").attr("src", iconurl);
-  var cardEl = $("<div class='card'>").addClass("pl-1 bg-primary text-light");
+  var cardEl = $("<div class='card'>").addClass(
+    "pl-1 bg-light text-dark center"
+  );
   var cardBlockDiv = $("<div>").attr("class", "card-block");
   var cardTitleDiv = $("<div>").attr("class", "card-block");
-  var cardTitleHeader = $("<h6>").text(dateValue).addClass("pt-2");
+  var cardTitleHeader = $("<h6>")
+    .text(dateValue)
+    .addClass("pt-2")
+    .css("font-size", "2rem");
   var cardTextDiv = $("<div>").attr("class", "card-text");
   var minTempEl = $("<p>")
     .text("Min Temp: " + minTempF + " ºF")
-    .css("font-size", "0.60rem");
+    .css("font-size", "1.25rem");
   var maxTempEl = $("<p>")
     .text("Max Temp: " + maxTempF + " ºF")
-    .css("font-size", "0.60rem");
+    .css("font-size", "1.25rem");
   var humidityEl = $("<p>")
     .text("Humidity: " + dayhumidity + "%")
-    .css("font-size", "0.60rem");
+    .css("font-size", "1.25rem");
   cardTextDiv.append(imgEl);
   cardTextDiv.append(minTempEl);
   cardTextDiv.append(maxTempEl);
@@ -112,11 +156,13 @@ function displayDayForeCast() {
   cardEl.append(cardBlockDiv);
   $(".card-deck").append(cardEl);
 }
+
 function addCardDeckHeader() {
-  deckHeader = $("<h4>").text("5-Day Forecast").attr("id", "card-deck-title");
+  deckHeader = $("<h4>").text("Weekly Forecast").attr("id", "card-deck-title");
   deckHeader.addClass("pt-4 pt-2");
   $(".card-deck").before(deckHeader);
 }
+
 function clearDisplayedWeatherInfo() {
   $("#current-weather-conditions").empty();
   $("#card-deck-title").remove();
@@ -178,6 +224,7 @@ function searchCity(cityName) {
     cityName +
     "&appid=" +
     APIKey;
+
   $.ajax({
     url: queryURL,
     method: "GET",
@@ -235,39 +282,97 @@ function searchCity(cityName) {
           dayhumidity = fiveDayForecast[i].humidity;
           displayDayForeCast();
         }
-        // // initialize sidenav using js
-        // const sideNav = document.querySelector(".sidenav");
-        // // using materialize js library
-        // M.Sidenav.init(sideNav, {});
-        // initialize navbar using jquery
-        $(document).ready(function () {
-          $(".sidenav").sidenav();
-        });
-        // initalize slider using js
-        const slider = document.querySelector(".slider");
-        M.Slider.init(slider, {
-          // little dots below slider
-          indicators: false,
-          height: 500,
-          // speed of transition
-          // transition: 500,
-          // 6 seconds
-          // interval: 6000,
-        });
-        // // initalize slider using jquery
-        // $(document).ready(function(){
-        //     $('.slider').slider();
-        // });
-        // initialize autocomplete
-        var ac = document.querySelector(".autocomplete");
-        M.Autocomplete.init(ac, {
-          // add autocomplete data here for example
-          data: {
-            Aruba: null,
-            Cancun: null,
-          },
-        });
       });
     });
   });
 }
+
+$("#search-btn").on("click", function () {
+  var city = $("#search-input").val().toUpperCase().trim();
+  callTripAdvisor(city);
+});
+
+function callTripAdvisor(city) {
+  var settings = {
+    async: true,
+    crossDomain: true,
+    url:
+      "https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=15&sort=relevance&offset=0&lang=en_US&currency=USD&units=km&query=" +
+      city,
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+      "x-rapidapi-key": "5ac62cb935mshb3eac24b9617fe8p1003a4jsncbd2d3214566",
+    },
+  };
+
+  $.ajax(settings).then(function (response) {
+    console.log(response);
+    displayTripAdivsor(response);
+  });
+}
+
+function displayTripAdivsor(response) {
+  for (i = 0; i < response.data.length; i++) {
+    var cardDivBlock = $("<div>");
+    var cardDiv = $("<div>");
+    var cardImage = $("<div>");
+    var cardBody = $("<div>");
+    var cardTitle = $("<div>");
+    var cardSubtitle = $("<div>");
+    var cardText = $("<div>");
+    var cardLink = $("<div>");
+
+    $(cardDivBlock).addClass("col-4");
+    $("#trip2").append(cardDivBlock);
+
+    $(cardDiv).addClass("card");
+    $(cardDivBlock).append(cardDiv);
+
+    $(cardImage).addClass("card-image");
+    $(cardImage).append(
+      "<img src =" +
+        response.data[i].result_object.photo.images.original.url +
+        ">"
+    );
+    $(cardDiv).append(cardImage);
+
+    $(cardBody).addClass("card-body");
+    $(cardDiv).append(cardBody);
+
+    $(cardTitle).addClass("card-title");
+    $(cardTitle).text(response.data[i].result_object.name);
+    $(cardBody).append(cardTitle);
+
+    $(cardSubtitle).addClass("card-subtitle");
+    $(cardSubtitle).text(response.data[i].result_type);
+    $(cardBody).append(cardSubtitle);
+
+    $(cardText).addClass("card-text");
+    $(cardText).text(response.data[i].result_object.category.key);
+    $(cardBody).append(cardText);
+
+    $(cardLink).addClass("card-action");
+    $(cardDiv).append(cardLink);
+  }
+}
+
+Promise.all([
+    fetch('https://jsonplaceholder.typicode.com/posts'),
+    fetch('https://jsonplaceholder.typicode.com/users')
+]).then(function (responses) {
+    // Get a JSON object from each of the responses
+    return Promise.all(responses.map(function (response) {
+        return response.json();
+    }));
+}).then(function (data) {
+    // Log the data to the console
+    // You would do something with both sets of data here
+    console.log(data);
+}).catch(function (error) {
+    // if there's an error, log it
+    console.log(error);
+});
+    })
+  
+});
